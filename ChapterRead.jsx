@@ -14,10 +14,11 @@ import { saveValue } from "./storage";
 
 export default function ChapterRead({ navigation, route }) {
   const data = route.params.data;
+  console.log(data);
   const param = route.params.param;
   const height = Dimensions.get("window").height;
   const [dataUrl, setDataUrl] = useState("");
-  const [paragraph, setParagraph] = useState(data.paragraph);
+  const [paragraph, setParagraph] = useState(data.paragraphs);
   const removeLastEntry = () => {
     const newPara = [...paragraph];
     newPara.pop();
@@ -31,26 +32,26 @@ export default function ChapterRead({ navigation, route }) {
   }, [chapterTitle, navigation]);
   if (dataUrl == "") {
     setDataUrl(route.params.url);
-    const name = route.params.url.match(/\/novel\/([^\/]+)/)[1];
-    const novelName = name.replace(/-/g, "_");
+    const novelName = route.params.novelName;
     saveValue(`${novelName}lastReadChapter`, dataUrl);
   }
 
   const prevChapter = async () => {
     const url = dataUrl;
+    console.log(url);
+    console.log("Current Chapter", url);
     const match = url.match(/chapter-(\d+)/);
     const currentChNo = parseInt(match[1], 10);
     const prev = currentChNo - 1;
     const prevChUrl = url.replace(`chapter-${currentChNo}`, `chapter-${prev}`);
-    const name = url.match(/\/novel\/([^\/]+)/)[1];
-    const novelName = name.replace(/-/g, "_");
+    const novelName = novelName;
     console.log("Previous Chapter", prevChUrl);
-    const fetchUrl = "http://192.168.162.117:5000/chRead";
-    // const fetchUrl = "http://192.168.107.117:5000/chRead";
+    const fetchUrl =
+      "https://script.google.com/macros/s/AKfycbypxCe3GywZxf_hMiavVKmIiEIz-o4SmCyMSqTV36SMNkC3GFTQXBy_sWkfxALDV016/exec";
     await fetch(fetchUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charse=utf=8",
       },
       body: JSON.stringify({ url: prevChUrl }),
     })
@@ -58,7 +59,7 @@ export default function ChapterRead({ navigation, route }) {
         return response.json();
       })
       .then((respons) => {
-        setParagraph(respons.paragraph);
+        setParagraph(respons.paragraphs);
         setChapterTitle(respons.title);
         setDataUrl(prevChUrl);
         scrollViewRef.current.scrollTo({ y: 0, animated: true });
@@ -75,15 +76,14 @@ export default function ChapterRead({ navigation, route }) {
     const currentChNo = parseInt(match[1], 10);
     const next = currentChNo + 1;
     const nextChUrl = url.replace(`chapter-${currentChNo}`, `chapter-${next}`);
-    const name = url.match(/\/novel\/([^\/]+)/)[1];
-    const novelName = name.replace(/-/g, "_");
+    const novelName = novelName;
     console.log("Next Chapter", nextChUrl);
-    const fetchUrl = "http://192.168.162.117:5000/chRead";
-    // const fetchUrl = "http://192.168.107.117:5000/chRead";
+    const fetchUrl =
+      "https://script.google.com/macros/s/AKfycbypxCe3GywZxf_hMiavVKmIiEIz-o4SmCyMSqTV36SMNkC3GFTQXBy_sWkfxALDV016/exec";
     await fetch(fetchUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charse=utf=8",
       },
       body: JSON.stringify({ url: nextChUrl }),
     })
@@ -92,7 +92,7 @@ export default function ChapterRead({ navigation, route }) {
       })
       .then((response) => {
         console.log("fetched succesfull");
-        setParagraph(response.paragraph);
+        setParagraph(response.paragraphs);
         setChapterTitle(response.title);
         setDataUrl(nextChUrl);
         scrollViewRef.current.scrollTo({ y: 0, animated: true });

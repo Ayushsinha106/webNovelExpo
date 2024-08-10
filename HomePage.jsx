@@ -34,102 +34,118 @@ const HomePage = ({ navigation, route }) => {
     {
       name: "Gifted Academy: The Perfect student",
       img: "https://allnovelbook.com/server-1/gifted-academy-the-perfect-student.jpg",
-      url: "https://allnovelbook.com/novel/gifted-academy-the-perfect-student",
-    },
-    {
-      name: "Classroom Of The Elite",
-      img: "https://allnovelbook.com/server-1/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e.jpg",
-      url: "https://allnovelbook.com/novel/youkoso-jitsuryoku-shijou-shugi-no-kyoushitsu-e",
-    },
-    {
-      name: "Reincarnation Of The Strongest Sword God",
-      img: "https://allnovelbook.com/server-1/reincarnation-of-the-strongest-sword-god.jpg",
-      url: "https://allnovelbook.com/novel/reincarnation-of-the-strongest-sword-god",
-    },
-    {
-      name: "God of Fishing",
-      img: "https://allnovelbook.com/server-1/god-of-fishing.jpg",
-      url: "https://allnovelbook.com/novel/god-of-fishing",
+      url: "https://novelfire.noveljk.org/book/gifted-academy-the-perfect-student",
     },
     {
       name: "My Vampire System",
-      img: "https://allnovelbook.com/server-1/my-vampire-system.jpg",
-      url: "https://allnovelbook.com/novel/my-vampire-system",
-    },
-    {
-      name: "Overgeared",
-      img: "https://allnovelbook.com/server-1/overgeared.jpg",
-      url: "https://allnovelbook.com/novel/overgeared",
-    },
-    {
-      name: "Global Killing: Awakening SSS-level Talent at the Beginning",
-      img: "https://allnovelbook.com/server-1/global-killing-awakening-sss-level-talent-at-the-beginning.jpg",
-      url: "https://allnovelbook.com/novel/global-killing-awakening-sss-level-talent-at-the-beginning",
+      img: "https://novelfire.noveljk.org/server-1/my-vampire-system.jpg",
+      url: "https://novelfire.noveljk.org/book/my-vampire-system",
     },
     {
       name: "Shadow Slave",
-      img: "https://allnovelbook.com/server-1/shadow-slave.jpg",
-      url: "https://allnovelbook.com/novel/shadow-slave",
+      img: "https://novelfire.noveljk.org/server-1/shadow-slave.jpg",
+      url: "https://novelfire.noveljk.org/book/shadow-slave",
     },
     {
-      name: "Dimensional Descent",
-      img: "https://allnovelbook.com/server-1/dimensional-descent.jpg",
-      url: "https://allnovelbook.com/novel/dimensional-descent",
+      name: "Nine Star Hegemon Body Arts",
+      img: "https://novelfire.noveljk.org/server-1/nine-star-hegemon-body-arts.jpg",
+      url: "https://novelfire.noveljk.org/book/nine-star-hegemon-body-arts",
     },
     {
-      name: "Invincible Divine Dragon's Cultivation System",
-      img: "https://allnovelbook.com/server-1/invincible-divine-dragons-cultivation-system.jpg",
-      url: "https://allnovelbook.com/novel/invincible-divine-dragons-cultivation-system",
-    },
-    {
-      name: "Legend of Swordsman",
-      img: "https://allnovelbook.com/server-1/legend-of-swordsman.jpg",
-      url: "https://allnovelbook.com/novel/legend-of-swordsman",
-    },
-    {
-      name: "Mesmerizing Ghost Doctor",
-      img: "https://allnovelbook.com/server-1/mesmerizing-ghost-doctor.jpg",
-      url: "https://allnovelbook.com/novel/mesmerizing-ghost-doctor",
-    },
-    {
-      name: "The Mech Touch",
-      img: "https://allnovelbook.com/server-1/the-mech-touch.jpg",
-      url: "https://allnovelbook.com/novel/the-mech-touch",
-    },
-    {
-      name: "God-tier Farm",
-      img: "https://allnovelbook.com/server-1/god-tier-farm.jpg",
-      url: "https://allnovelbook.com/novel/god-tier-farm",
-    },
-    {
-      name: "The Abandoned Husband Dominates",
-      img: "https://allnovelbook.com/server-1/the-abandoned-husband-dominates.jpg",
-      url: "https://allnovelbook.com/novel/the-abandoned-husband-dominates",
-    },
-    {
-      name: "Martial God Asura",
-      img: "https://allnovelbook.com/server-1/martial-god-asura.jpg",
-      url: "https://allnovelbook.com/novel/martial-god-asura",
-    },
-    {
-      name: "Reincarnation Of The Strongest Spirit Master",
-      img: "https://allnovelbook.com/server-1/reincarnation-of-the-strongest-spirit-master.jpg",
-      url: "https://allnovelbook.com/novel/reincarnation-of-the-strongest-spirit-master",
-    },
-    {
-      name: "Journey To Become A True God",
-      img: "https://allnovelbook.com/server-1/journey-to-become-a-true-god.jpg",
-      url: "https://allnovelbook.com/novel/journey-to-become-a-true-god",
+      name: "Reincarnation Of The Strongest Sword God",
+      img: "https://novelfire.noveljk.org/server-1/reincarnation-of-the-strongest-sword-god.jpg",
+      url: "https://novelfire.noveljk.org/book/reincarnation-of-the-strongest-sword-god",
     },
     {
       name: "Supreme Magus",
-      img: "https://allnovelbook.com/server-1/supreme-magus.jpg",
-      url: "https://allnovelbook.com/novel/supreme-magus",
+      img: "https://novelfire.noveljk.org/server-1/supreme-magus.jpg",
+      url: "https://novelfire.noveljk.org/book/supreme-magus",
     },
     {
-      name: "Fey Evolution Merchant",
-      img: "https://allnovelbook.com/server-1/fey-evolution-merchant.jpg",
-      url: "https://allnovelbook.com/novel/fey-evolution-merchant",
+      name: "Invincible Divine Dragon's Cultivation System",
+      img: "https://novelfire.noveljk.org/server-1/invincible-divine-dragons-cultivation-system.jpg",
+      url: "https://novelfire.noveljk.org/book/invincible-divine-dragons-cultivation-system",
+    },
+    {
+      name: "Infinite Mana In The Apocalypse",
+      img: "https://novelfire.noveljk.org/server-1/infinite-mana-in-the-apocalypse.jpg",
+      url: "https://novelfire.noveljk.org/book/infinite-mana-in-the-apocalypse",
+    },
+    {
+      name: "Global Lord: 100% Drop Rate",
+      img: "https://novelfire.noveljk.org/server-1/global-lord-100-drop-rate.jpg",
+      url: "https://novelfire.noveljk.org/book/global-lord-100-drop-rate",
+    },
+    {
+      name: "Alchemy Emperor of the Divine Dao",
+      img: "https://novelfire.noveljk.org/server-1/alchemy-emperor-of-the-divine-dao.jpg",
+      url: "https://novelfire.noveljk.org/book/alchemy-emperor-of-the-divine-dao",
+    },
+    {
+      name: "The Mech Touch",
+      img: "https://novelfire.noveljk.org/server-1/the-mech-touch.jpg",
+      url: "https://novelfire.noveljk.org/book/the-mech-touch",
+    },
+    {
+      name: "Genius Club",
+      img: "https://novelfire.noveljk.org/server-1/genius-club.jpg",
+      url: "https://novelfire.noveljk.org/book/genius-club",
+    },
+    {
+      name: "Overpowered Wizard",
+      img: "https://novelfire.noveljk.org/server-1/overpowered-wizard.jpg",
+      url: "https://novelfire.noveljk.org/book/overpowered-wizard",
+    },
+    {
+      name: "Dungeon Life",
+      img: "https://novelfire.noveljk.org/server-1/dungeon-life.jpg",
+      url: "https://novelfire.noveljk.org/book/dungeon-life",
+    },
+    {
+      name: "Game of Thrones: I Am The Heir For A Day",
+      img: "https://novelfire.noveljk.org/server-1/game-of-thrones-i-am-the-heir-for-a-day.jpg",
+      url: "https://novelfire.noveljk.org/book/game-of-thrones-i-am-the-heir-for-a-day",
+    },
+
+    {
+      name: "Supreme Harem God System",
+      img: "https://novelfire.noveljk.org/server-1/supreme-harem-god-system.jpg",
+      url: "https://novelfire.noveljk.org/book/supreme-harem-god-system",
+    },
+    {
+      name: "Reincarnated with the Mind Control Powers in Another World.",
+      img: "https://novelfire.noveljk.org/server-1/reincarnated-with-the-mind-control-powers-in-another-world.jpg",
+      url: "https://novelfire.noveljk.org/book/reincarnated-with-the-mind-control-powers-in-another-world",
+    },
+    {
+      name: "My Three Wives Are Beautiful Vampires",
+      img: "https://novelfire.noveljk.org/server-1/my-three-wives-are-beautiful-vampires.jpg",
+      url: "https://novelfire.noveljk.org/book/my-three-wives-are-beautiful-vampires",
+    },
+    {
+      name: "Reincarnation Of The Strongest Sword God",
+      img: "https://novelfire.noveljk.org/server-1/reincarnation-of-the-strongest-sword-god.jpg",
+      url: "https://novelfire.noveljk.org/book/reincarnation-of-the-strongest-sword-god",
+    },
+    {
+      name: "My Vampire System",
+      img: "https://novelfire.noveljk.org/server-1/my-vampire-system.jpg",
+      url: "https://novelfire.noveljk.org/book/my-vampire-system",
+    },
+    {
+      name: "Village Head's Debauchery",
+      img: "https://novelfire.noveljk.org/server-1/village-heads-debauchery.jpg",
+      url: "https://novelfire.noveljk.org/book/village-heads-debauchery",
+    },
+    {
+      name: "The Mech Touch",
+      img: "https://novelfire.noveljk.org/server-1/the-mech-touch.jpg",
+      url: "https://novelfire.noveljk.org/book/the-mech-touch",
+    },
+    {
+      name: "Global Killing: Awakening SSS-level Talent at the Beginning",
+      img: "https://novelfire.noveljk.org/server-1/global-killing-awakening-sss-level-talent-at-the-beginning.jpg",
+      url: "https://novelfire.noveljk.org/book/global-killing-awakening-sss-level-talent-at-the-beginning",
     },
   ];
   useEffect(() => {
@@ -151,12 +167,12 @@ const HomePage = ({ navigation, route }) => {
 
   const handleNovelPress = async (novel) => {
     console.log(novel);
-    const fetchUrl = "http://192.168.162.117:5000/detail";
-    // const fetchUrl = "http://192.168.107.117:5000/detail";
+    const fetchUrl =
+      "https://script.google.com/macros/s/AKfycbzQCdoNFF-W3QXf7DzH2hVPQ3EgOd5_Y3AMwLtW8-qiB1EOetLl6XBM9obaNHcn_QAL/exec";
     await fetch(fetchUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charse=utf=8",
       },
       body: JSON.stringify({ url: novel }),
     })
@@ -177,20 +193,22 @@ const HomePage = ({ navigation, route }) => {
   };
   const handleSearchNovel = async () => {
     console.log("search Novel");
-    const fetchUrl = "http://192.168.162.117:5000/search";
-    // const fetchUrl = "http://192.168.107.117:5000/search";
+    const fetchUrl =
+      "https://script.google.com/macros/s/AKfycbzn_FY-UAFkxITCGYmIGH7x5QVIAKAjTorx6qPv7Wqohg-gF8S3soEu-1ugqPnjniwQ/exec";
+
     await fetch(fetchUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/plain;charse=utf=8",
       },
-      body: JSON.stringify({ key1: inputValue }),
+      body: JSON.stringify({ url: inputValue }),
     })
       .then((response) => {
         return response.json();
       })
       .then((response) => {
         setResult(response.result);
+        console.log(response);
         console.log("fetched succesfull");
         setSecModalVisible(true);
         setIsSearch(1);
