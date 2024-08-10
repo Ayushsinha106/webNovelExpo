@@ -1,13 +1,13 @@
 {
   "expo": {
     "name": "novelApp",
-    "slug": "novelApp",
+    "slug": "webnovel",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon2.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon2.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.ayushsinha106.novelApp"
@@ -29,8 +29,15 @@
     },
     "extra": {
       "eas": {
-        "projectId": "ac459698-7e57-4fce-977c-b11bdd639bbb"
+        "projectId": "831df72d-3526-45b8-9ab0-17f4c68ad633"
       }
+    },
+    "owner": "ayushsinha106",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/08e08b6b-fd76-4e2a-9d1a-4e58b707eb3d"
     }
   }
 }
