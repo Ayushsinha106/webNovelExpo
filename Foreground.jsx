@@ -30,17 +30,16 @@ export default function Foreground({ navigation, route, NovelDetail }) {
   const [result, setResult] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [chapterName, setChapterName] = useState(details.chapters.chap);
-  console.log("urlPage");
+  // const [val, setVal] = useState(urlPage);
   const name = title;
-  console.log("fine");
   const novelName = name
     .replace(/[^\w\s]/gi, "")
     .split(" ")
     .join("");
-  console.log("novelName", novelName);
   const param = `${novelName}lastReadChapter`;
   const param2 = `${novelName}currentPage`;
   let savedCurrentPage = "";
+  console.log("param is foreground", param);
   const currPage = async () => {
     const cc = await AsyncStorage.getItem(param2);
     if (!cc) {
@@ -57,12 +56,15 @@ export default function Foreground({ navigation, route, NovelDetail }) {
   const handleReadChapter = async () => {
     StatusBar.setBackgroundColor("#000");
     const cal = await AsyncStorage.getItem(param);
-    let val;
+    let val = urlPage + "/chapter-1";
+    const link = urlPage + "/chapter-1";
     if (!cal) {
-      val = urlPage + "/chapter-1";
+      val = link;
     } else {
       val = cal;
     }
+    console.log("Link is", link);
+    console.log("cal is", cal);
     const fetchUrl =
       "https://script.google.com/macros/s/AKfycbypxCe3GywZxf_hMiavVKmIiEIz-o4SmCyMSqTV36SMNkC3GFTQXBy_sWkfxALDV016/exec";
     await fetch(fetchUrl, {
@@ -76,12 +78,12 @@ export default function Foreground({ navigation, route, NovelDetail }) {
         return response.json();
       })
       .then((response) => {
-        console.log("fetched succesfull");
         saveValue(param, val);
         navigation.navigate("chapter", {
           data: response,
           url: val,
           param: param,
+          novelName: novelName,
         });
       })
       .catch((err) => {
@@ -96,6 +98,9 @@ export default function Foreground({ navigation, route, NovelDetail }) {
 
   const handleChapterPress = async (ch, chNo) => {
     console.log("clicked chapter no.", ch);
+    saveValue(param, ch);
+    await AsyncStorage.setItem(param, ch);
+    console.log("param is saved", param);
     const fetchUrl =
       "https://script.google.com/macros/s/AKfycbypxCe3GywZxf_hMiavVKmIiEIz-o4SmCyMSqTV36SMNkC3GFTQXBy_sWkfxALDV016/exec"; //papa
     await fetch(fetchUrl, {
@@ -110,7 +115,6 @@ export default function Foreground({ navigation, route, NovelDetail }) {
       })
       .then((response) => {
         saveValue(param, ch);
-        console.log(param);
         navigation.navigate("chapter", {
           data: response,
           url: ch,

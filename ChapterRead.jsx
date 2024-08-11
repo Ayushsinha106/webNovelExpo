@@ -14,11 +14,14 @@ import { saveValue } from "./storage";
 
 export default function ChapterRead({ navigation, route }) {
   const data = route.params.data;
-  console.log(data);
   const param = route.params.param;
   const height = Dimensions.get("window").height;
   const [dataUrl, setDataUrl] = useState("");
   const [paragraph, setParagraph] = useState(data.paragraphs);
+  console.log("dataurl", dataUrl);
+  console.log("param is chRead", param);
+  saveValue(param, dataUrl);
+
   const removeLastEntry = () => {
     const newPara = [...paragraph];
     newPara.pop();

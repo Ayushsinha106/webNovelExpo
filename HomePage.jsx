@@ -37,6 +37,11 @@ const HomePage = ({ navigation, route }) => {
       url: "https://novelfire.noveljk.org/book/gifted-academy-the-perfect-student",
     },
     {
+      name: "Lord of The Mysteries",
+      img: "https://novelfire.noveljk.org/server-1/lord-of-the-mysteries.jpg",
+      url: "https://novelfire.noveljk.org/book/lord-of-the-mysteries",
+    },
+    {
       name: "My Vampire System",
       img: "https://novelfire.noveljk.org/server-1/my-vampire-system.jpg",
       url: "https://novelfire.noveljk.org/book/my-vampire-system",
