@@ -2,7 +2,7 @@
   "expo": {
     "name": "novelApp",
     "slug": "webnovel",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon2.png",
     "userInterfaceStyle": "dark",
@@ -37,7 +37,7 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/08e08b6b-fd76-4e2a-9d1a-4e58b707eb3d"
+      "url": "https://u.expo.dev/831df72d-3526-45b8-9ab0-17f4c68ad633"
     }
   }
 }
