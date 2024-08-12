@@ -13,6 +13,7 @@ import {
   ScrollView,
   Modal,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const HomePage = ({ navigation, route }) => {
   const [result, setResult] = useState([]);
@@ -24,6 +25,21 @@ const HomePage = ({ navigation, route }) => {
   const width = Dimensions.get("window").width;
   const height = Dimensions.get("window").height;
   const [isSearch, setIsSearch] = useState(0);
+  const [history, setHistory] = useState([]);
+
+  // fetch recent novels
+  const fetchHistory = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem("history");
+      setHistory(jsonValue != null ? JSON.parse(jsonValue) : []);
+    } catch (e) {
+      console.error("Error fetching history: ", e);
+    }
+  };
+
+  useEffect(() => {
+    fetchHistory();
+  }, []);
 
   const handleInputChange = (text) => {
     // Update the state with the current input value
@@ -153,6 +169,7 @@ const HomePage = ({ navigation, route }) => {
       url: "https://novelfire.noveljk.org/book/global-killing-awakening-sss-level-talent-at-the-beginning",
     },
   ];
+
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
       setSearchPageData(false);
@@ -165,6 +182,8 @@ const HomePage = ({ navigation, route }) => {
         console.log("not now");
       }
     });
+
+    fetchHistory();
 
     // Cleanup the listener when the component is unmounted
     return unsubscribe;
@@ -257,6 +276,71 @@ const HomePage = ({ navigation, route }) => {
           >
             <View style={styles.horizontalCon}>
               {TopNovels.map((item, index) => (
+                <TouchableOpacity
+                  key={index}
+                  onPress={() => handleNovelPress(item.url)}
+                >
+                  <View style={styles.novelCard} touch>
+                    <Image source={{ uri: item.img }} style={styles.novelPic} />
+                    <Text
+                      style={styles.novelTitle}
+                      numberOfLines={1}
+                      ellipsizeMode="tail"
+                    >
+                      {item.name}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </ScrollView>
+          <Modal
+            visible={isModalVisible}
+            style={styles.modalContainer}
+            onRequestClose={() => setModalVisible(false)}
+            animationType="fade"
+          >
+            <View style={styles.modalContent}>
+              <TextInput
+                placeholder="Search"
+                style={styles.searchInput}
+                onChangeText={handleInputChange}
+                value={inputValue}
+                onSubmitEditing={() => handleSearchNovel}
+              />
+              <TouchableOpacity
+                style={{
+                  height: 60,
+                  width: 30,
+                  marginTop: 30,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                }}
+                onPress={() => handleSearchNovel()}
+              >
+                <Image
+                  source={{
+                    uri: "https://png.pngtree.com/png-vector/20190321/ourmid/pngtree-vector-find-icon-png-image_854997.jpg",
+                  }}
+                  style={{
+                    height: 30,
+                    width: 30,
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
+          </Modal>
+        </View>
+        <View style={styles.novelMain}>
+          <Text style={styles.novelSort}>Recent Novels</Text>
+          <ScrollView
+            horizontal
+            style={styles.scrollHorizontal}
+            showsHorizontalScrollIndicator={false}
+          >
+            <View style={styles.horizontalCon}>
+              {history.map((item, index) => (
                 <TouchableOpacity
                   key={index}
                   onPress={() => handleNovelPress(item.url)}
@@ -548,7 +632,7 @@ const styles = StyleSheet.create({
   },
   novelMain: {
     backgroundColor: "#111",
-    Height: 140,
+    minHeight: 140,
     width: Dimensions.get("window").width,
     borderRadius: 40,
     display: "flex",
@@ -560,6 +644,7 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     // marginBottom: 50,
     paddingHorizontal: 5,
+    marginBottom: 20,
   },
   novelCard: {
     overflow: "hidden",

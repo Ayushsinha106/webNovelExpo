@@ -17,6 +17,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Foreground({ navigation, route, NovelDetail }) {
   const details = route.params.data;
+  const imgUrl = details.Details?.imgUrl || "";
   const urlPage = route.params.url || ""; // Use a default string if url is null/undefined
   const title = details.Details.title || ""; // Use a default string if url is null/undefined
   const Genres = details.Details?.Genres || []; // Use a default empty array
@@ -40,6 +41,27 @@ export default function Foreground({ navigation, route, NovelDetail }) {
   const param2 = `${novelName}currentPage`;
   let savedCurrentPage = "";
   console.log("param is foreground", param);
+
+  // Add novel to recent read novel
+  const addToHistory = async (novel) => {
+    try {
+      const jsonValue = await AsyncStorage.getItem("history");
+      let historyArray = jsonValue != null ? JSON.parse(jsonValue) : [];
+
+      // Check if the novel already exists in the history based on the URL
+      const exists = historyArray.some((item) => item.url === novel.url);
+
+      if (!exists) {
+        // Add the novel only if it doesn't already exist in the history
+        historyArray.push(novel);
+        const updatedJsonValue = JSON.stringify(historyArray);
+        await AsyncStorage.setItem("history", updatedJsonValue);
+      }
+    } catch (e) {
+      console.error("Error adding to history: ", e);
+    }
+  };
+
   const currPage = async () => {
     const cc = await AsyncStorage.getItem(param2);
     if (!cc) {
@@ -63,8 +85,14 @@ export default function Foreground({ navigation, route, NovelDetail }) {
     } else {
       val = cal;
     }
-    console.log("Link is", link);
-    console.log("cal is", cal);
+
+    let novel = {
+      name: title,
+      img: imgUrl,
+      url: urlPage,
+    };
+    addToHistory(novel);
+
     const fetchUrl =
       "https://script.google.com/macros/s/AKfycbypxCe3GywZxf_hMiavVKmIiEIz-o4SmCyMSqTV36SMNkC3GFTQXBy_sWkfxALDV016/exec";
     await fetch(fetchUrl, {
@@ -98,8 +126,13 @@ export default function Foreground({ navigation, route, NovelDetail }) {
 
   const handleChapterPress = async (ch, chNo) => {
     console.log("clicked chapter no.", ch);
+    let novel = {
+      name: title,
+      img: imgUrl,
+      url: urlPage,
+    };
+    addToHistory(novel);
     saveValue(param, ch);
-    await AsyncStorage.setItem(param, ch);
     console.log("param is saved", param);
     const fetchUrl =
       "https://script.google.com/macros/s/AKfycbypxCe3GywZxf_hMiavVKmIiEIz-o4SmCyMSqTV36SMNkC3GFTQXBy_sWkfxALDV016/exec"; //papa
