@@ -23,5 +23,8 @@ To start using the app:
 - **Automatic Bookmarking**: The app automatically saves your last read chapter, so you can pick up right where you left off.
 
 ---
+## Interface
+
+![App Interface](interface.jpg)
 
 Enjoy your reading experience!
